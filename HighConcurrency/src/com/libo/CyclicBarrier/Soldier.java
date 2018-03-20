@@ -18,11 +18,11 @@ public class Soldier implements Runnable {
 	public void run() {
 		try {
 			//等待所有士兵到齐
-			  
+			cyclicBarrier.await();
 			dowork();
 			//等待所有士兵完成任务
 			cyclicBarrier.await();
-		} catch (Exception e) {
+		} catch (BrokenBarrierException | InterruptedException e) {
 			e.printStackTrace();
 		} finally {
 			
