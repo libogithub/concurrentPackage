@@ -16,24 +16,15 @@ public class Soldier implements Runnable {
 	@Override
 	public void run() {
 		try {
-<<<<<<< HEAD
 			cyclicBarrier.await();//等待所有士兵到齐
 //			if("士兵5".equals(solider)){
 //				int a = 5/0;
 //			}
-=======
 			//等待所有士兵到齐
 			cyclicBarrier.await();
->>>>>>> branch 'master' of https://github.com/libogithub/concurrentPackage.git
 			dowork();
-<<<<<<< HEAD
 			cyclicBarrier.await();//等待所有士兵完成任务
 		} catch (Exception e) {
-=======
-			//等待所有士兵完成任务
-			cyclicBarrier.await();
-		} catch (BrokenBarrierException | InterruptedException e) {
->>>>>>> branch 'master' of https://github.com/libogithub/concurrentPackage.git
 			e.printStackTrace();
 		} finally {
 			
