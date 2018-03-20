@@ -5,7 +5,7 @@ import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
 public class Soldier implements Runnable {
-
+	
 	private String solider ;
 	private CyclicBarrier cyclicBarrier ;
 	
@@ -13,15 +13,15 @@ public class Soldier implements Runnable {
 		this.solider = solider;
 		this.cyclicBarrier = cyclicBarrier;
 	}
-	
 	@Override
 	public void run() {
 		try {
-			//等待所有士兵到齐
-			  
+			cyclicBarrier.await();//等待所有士兵到齐
+//			if("士兵5".equals(solider)){
+//				int a = 5/0;
+//			}
 			dowork();
-			//等待所有士兵完成任务
-			cyclicBarrier.await();
+			cyclicBarrier.await();//等待所有士兵完成任务
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -37,5 +37,4 @@ public class Soldier implements Runnable {
 		}
 		System.out.println(solider + ":完成任务");
 	}
-
 }

@@ -19,5 +19,4 @@ public class CyclicBarrierRun implements Runnable {
 			flag = true ;
 		}
 	}
-
 }
