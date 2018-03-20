@@ -2,7 +2,7 @@ package com.libo.lockSupport;
 
 import java.util.concurrent.locks.LockSupport;
 
-public class LockSupportDemo {
+public class LockSupportDemo{
 	
 	public static class Park implements Runnable{
 
